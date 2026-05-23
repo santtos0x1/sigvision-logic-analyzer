@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 /**
     * @brief Introduces a delay in microseconds using GCC's Extended Assembly
     *   
