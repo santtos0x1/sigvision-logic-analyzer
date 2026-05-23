@@ -13,6 +13,19 @@ __attribute__((always_inline)) inline HAL_StatusTypeDef debug_print(const char *
     size_t pd_size = strlen(pdata);
 
     status = UART_TX_data(pdata, (uint16_t)pd_size);
-
+    
     return status;
+}
+
+char *debug_type_to_name(debug_type_t d_type)
+{
+    switch(d_type)
+    {
+        case DEBUG_INFO: return "[INFO]";
+        case DEBUG_DATA: return "[DATA]";
+        case DEBUG_WARN: return "[WARN]";
+        case DEBUG_ERROR: return "[ERROR]";
+        
+        default: return "[DEBUG]";
+    }
 }
