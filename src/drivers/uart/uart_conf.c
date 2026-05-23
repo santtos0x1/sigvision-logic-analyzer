@@ -4,6 +4,8 @@
 #include "stm32f4xx_hal_usart.h"
 #include "stm32f4xx_hal_rcc.h"
 
+#include <stdint.h>
+
 #define UART_MAX_DELAY 1000 // UART Delay timout
 
 UART_HandleTypeDef huart = {0}; // UART config struct
@@ -30,7 +32,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
 
 __attribute__((always_inline)) inline HAL_StatusTypeDef UART_init(void)
 {
-    HAL_StatusTypeDef status;
+    HAL_StatusTypeDef status = 0;
 
     huart.Instance = USART1;
 
@@ -49,7 +51,7 @@ __attribute__((always_inline)) inline HAL_StatusTypeDef UART_init(void)
 
 HAL_StatusTypeDef UART_TX_data(const char *pdata, uint16_t size)
 {
-    HAL_StatusTypeDef status;
+    HAL_StatusTypeDef status = 0;
     
     // Sends data through UART
     status = HAL_UART_Transmit(&huart, (uint8_t *)pdata, size, UART_MAX_DELAY);
