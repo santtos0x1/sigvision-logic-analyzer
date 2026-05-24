@@ -30,3 +30,15 @@ __attribute((always_inline)) inline void gpio_init(void)
 
     GPIOB->PUPDR &= ~(GPIO_PUPDR_PUPD0_Msk);
 }
+
+uint8_t probes_read(void)
+{
+    uint8_t sample_data = 0;
+    
+    // 00000000000000000000011111111 -> 0xFF
+    // 01010101010000100100010010100 -> GPIOA->IDR register
+    // 00000000000000000000010010100 -> Filtered data
+    sample_data = GPIOA->IDR & 0xFF;
+
+    return sample_data;
+}
