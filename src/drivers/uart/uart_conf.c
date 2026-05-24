@@ -22,7 +22,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
         // Configures GPIOA pin 9 as USART1 TX
         tx.Pin = GPIO_PIN_9;
         tx.Mode = GPIO_MODE_AF_PP;
-        tx.Pull = GPIO_NOPULL;
+        tx.Pull = GPIO_PULLUP;
         tx.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
         tx.Alternate = GPIO_AF7_USART1;
 
@@ -34,6 +34,7 @@ __attribute__((always_inline)) inline HAL_StatusTypeDef UART_init(void)
 {
     HAL_StatusTypeDef status = 0;
 
+    // UART configuration
     huart.Instance = USART1;
 
     huart.Init.BaudRate = 115200;
