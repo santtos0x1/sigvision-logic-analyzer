@@ -1,4 +1,4 @@
-#include "drivers/clock/sys_clock.h"
+#include "lib/drivers/clock/sys_clock.h"
 
 #include "stm32f4xx_hal.h"
 

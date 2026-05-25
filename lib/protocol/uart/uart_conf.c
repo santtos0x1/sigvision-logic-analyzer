@@ -1,4 +1,4 @@
-#include "protocol/uart/uart_conf.h"
+#include "lib/protocol/uart/uart_conf.h"
 
 #include "stm32f4xx_hal_uart.h"
 #include "stm32f4xx_hal_usart.h"

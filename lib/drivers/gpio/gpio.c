@@ -1,4 +1,4 @@
-#include "drivers/gpio/gpio.h"
+#include "lib/drivers/gpio/gpio.h"
 
 #include "stm32f4xx.h"
 

@@ -1,5 +1,5 @@
-#include "utils/debug/debug.h"
-#include "protocol/uart/uart_conf.h"
+#include "lib/services/debug/debug.h"
+#include "lib/protocol/uart/uart_conf.h"
 
 #include "stm32f4xx_hal_uart.h"
 
