@@ -1,6 +1,8 @@
-#include "drivers/gpio/gpio_conf.h"
+#include "drivers/gpio/gpio.h"
 
 #include "stm32f4xx.h"
+
+#include <stdint.h>
 
 __attribute((always_inline)) inline void gpio_init(void)
 {
@@ -35,9 +37,9 @@ uint8_t probes_read(void)
 {
     uint8_t sample_data = 0;
     
-    // 00000000000000000000011111111 -> 0xFF
-    // 01010101010000100100010010100 -> GPIOA->IDR register
-    // 00000000000000000000010010100 -> Filtered data
+    // 00000...11111111 -> 0xFF
+    // 01010...10010100 -> GPIOA->IDR 32-bit register
+    // 00000...10010100 -> Filtered data
     sample_data = GPIOA->IDR & 0xFF;
 
     return sample_data;
