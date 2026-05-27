@@ -1,5 +1,6 @@
 #pragma once
 
 #include <stdint.h>
+#include "lib/services/error/error.h"
 
-void sample_acq(uint8_t *buff, uint16_t buff_len);
+log_err_t sample_acq(uint8_t *buff, uint16_t buff_len);
