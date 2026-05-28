@@ -12,6 +12,5 @@
  *          - AHB / Bus Clock  : 84 MHz
  *          - APB Peripherals  : 84 MHz
  * 
- * @return void
  */
 __attribute__((always_inline)) inline void system_clock_init(void);

@@ -3,8 +3,6 @@
 /**
  * @brief Configures and initializes UART communication for debugging.
  * Uses USART1 instace and only configures TX pin. Using pin 9 in GPIOA by default TX pin
- * 
- * @param Void
  *  
  * @return HAL_StatusTypeDef: status
  * 
