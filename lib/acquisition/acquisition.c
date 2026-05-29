@@ -8,7 +8,7 @@
 
 #define ACQUISITION_MAX_SAMPLES 8192
 
-log_err_t sample_acq(uint8_t *buff, uint16_t buff_len)
+log_err_t sample_acq(uint16_t *buff, uint16_t buff_len)
 {
     if(buff_len <= ACQUISITION_MAX_SAMPLES)
     {

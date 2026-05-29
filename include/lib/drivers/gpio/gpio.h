@@ -12,4 +12,4 @@ __attribute((always_inline)) inline void gpio_init(void);
  *
  * @return uint16_t  2-byte bitmask representing the digital state of each probe
  */
-uint8_t probes_read(void);
+uint16_t probes_read(void);

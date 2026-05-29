@@ -33,14 +33,17 @@ __attribute((always_inline)) inline void gpio_init(void)
     GPIOB->PUPDR &= ~(GPIO_PUPDR_PUPD0_Msk);
 }
 
-uint8_t probes_read(void)
+uint16_t probes_read(void)
 {
-    uint8_t sample_data = 0;
+    uint16_t sample_data = 0;
     
     // 00000...11111111 -> 0xFF
     // 01010...10010100 -> GPIOA->IDR 32-bit register
     // 00000...10010100 -> Filtered data
     sample_data = GPIOA->IDR & 0xFF;
 
+    // Gets 1 bit of the CLK pin and merges to sample_data
+    sample_data |= (GPIOB->IDR & 0x01) << 8;
+    
     return sample_data;
 }
