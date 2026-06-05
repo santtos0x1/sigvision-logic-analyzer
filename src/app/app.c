@@ -27,6 +27,7 @@ void start_app(void)
             {
                 set_state(STATE_ERROR);
             }
+
         }
         case STATE_ACQUISITION:
         {
