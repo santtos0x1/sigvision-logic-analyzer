@@ -28,7 +28,7 @@ __attribute((always_inline)) inline void gpio_init(void)
 uint8_t probes_read(void)
 {
     uint8_t sample_data = 0;
-    
+
     // 00000...11111111 -> 0xFF
     // 01010...10010100 -> GPIOA->IDR 32-bit register
     // 00000...10010100 -> Filtered data
@@ -36,3 +36,5 @@ uint8_t probes_read(void)
 
     return sample_data;
 }
+
+// 0 & 1 = 0
