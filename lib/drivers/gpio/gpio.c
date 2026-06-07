@@ -4,25 +4,38 @@
 
 #include <stdint.h>
 
-__attribute((always_inline)) inline void gpio_init(void)
+__attribute((always_inline)) static inline void config_reg_ahb1enr(void)
 {
     // Enables GPIOA clock
     RCC->AHB1ENR &= ~(RCC_AHB1ENR_GPIOAEN_Msk);
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+}
 
+__attribute((always_inline)) static inline void config_reg_moder(void)
+{
     // Sets GPIOA pin 0-7 to input mode (Channel probes)
     GPIOA->MODER &= ~(
         GPIO_MODER_MODE0_Msk | GPIO_MODER_MODE1_Msk | GPIO_MODER_MODE2_Msk |
         GPIO_MODER_MODE3_Msk | GPIO_MODER_MODE4_Msk | GPIO_MODER_MODE5_Msk |
         GPIO_MODER_MODE6_Msk | GPIO_MODER_MODE7_Msk
     );
-    
+}
+
+__attribute((always_inline)) static inline void config_reg_pupdr(void)
+{
     // Sets GPIOA pin 0-7 to no pull
     GPIOA->PUPDR &= ~(
         GPIO_PUPDR_PUPD0_Msk | GPIO_PUPDR_PUPD1_Msk | GPIO_PUPDR_PUPD2_Msk |
         GPIO_PUPDR_PUPD3_Msk | GPIO_PUPDR_PUPD4_Msk | GPIO_PUPDR_PUPD5_Msk |
         GPIO_PUPDR_PUPD6_Msk | GPIO_PUPDR_PUPD7_Msk
     );
+}
+
+__attribute((always_inline)) inline void gpio_init(void)
+{
+    config_reg_ahb1enr();
+    config_reg_moder();
+    config_reg_pupdr();
 }
 
 uint8_t probes_read(void)

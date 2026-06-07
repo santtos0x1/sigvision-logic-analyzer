@@ -20,7 +20,7 @@ void start_app(void)
 
             // Initializes system clock tree module
             system_clock_init();
-
+            
             // Initializes UART config
             g_err = UART_init();
             if(g_err != HAL_OK)
