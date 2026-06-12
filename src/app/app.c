@@ -7,6 +7,8 @@
 #include "lib/acquisition/sampling_time.h"
 #include "lib/acquisition/dma_capture.h"
 
+#include "stdio.h"
+
 fsm_state_t fsm_state = STATE_IDLE;
 
 void start_app(void)
@@ -35,13 +37,16 @@ void start_app(void)
 
             // Initializes DMA2 module
             dma_init();
+
+            set_state(STATE_ACQUISITION);
         }
 
         case STATE_ACQUISITION:
         {
-
+            // Starts to count and generate update events;
+            tim1_init_counter();
         }
-        
+
         case STATE_ERROR:
         {
             
