@@ -1,3 +1,3 @@
 #pragma once
 
-void dma_init(void);
+__attribute((always_inline)) inline void dma_init(void);

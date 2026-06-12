@@ -105,7 +105,7 @@ __attribute((always_inline)) static inline void dma_stream_enable(void)
     DMA2_Stream5->CR |= DMA_EN_EN;
 }
 
-void dma_init(void)
+__attribute((always_inline)) inline void dma_init(void)
 {    
     config_reg_cr();
     config_reg_ndtr();

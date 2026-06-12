@@ -86,6 +86,9 @@ __attribute((always_inline)) inline void config_timer(void)
     config_reg_dier();
     config_reg_psc();
     config_reg_arr();
+}
 
+__attribute((always_inline)) inline void tim1_init_counter(void)
+{
     counter_enable();
 }
