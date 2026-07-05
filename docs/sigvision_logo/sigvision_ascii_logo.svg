@@ -28,7 +28,7 @@
 
   <text x="340" y="268" text-anchor="middle" style="fill:rgb(74, 153, 112);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, Courier, monospace;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">──────────────────────────────────────────────────────────────</text>
 
-  <text x="340" y="290" text-anchor="middle" style="fill:rgb(0, 191, 255);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, Courier, monospace;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">[ Logic Analyzer  ·  8-Channel  ·  Digital Signal Capture ]</text>
+  <text x="340" y="290" text-anchor="middle" style="fill:rgb(0, 191, 255);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, Courier, monospace;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">[ Logic Analyzer  ·  4-Channel  ·  Digital Signal Capture ]</text>
 
   <text x="340" y="315" text-anchor="middle" style="fill:rgb(198, 120, 221);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, Courier, monospace;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">▌ STM32F411  ·  ARM Cortex-M4  ·  84MHz ▐</text>
 
