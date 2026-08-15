@@ -3,7 +3,6 @@
 
 #include "stm32f4xx_hal_uart.h"
 
-#include <stdio.h>
 #include <stdint.h>
 #include <string.h>
 

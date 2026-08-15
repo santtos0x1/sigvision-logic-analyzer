@@ -7,7 +7,7 @@
 #include "lib/acquisition/sampling_time.h"
 #include "lib/acquisition/dma_capture.h"
 
-#include "stdio.h"
+#include <stdio.h>
 
 fsm_state_t fsm_state = STATE_IDLE;
 
